@@ -15,10 +15,10 @@ function App() {
 
   const newsApi = async () => {
     try {
-      //const proxyUrl = "https://cors-anywhere.herokuapp.com/";
+      const proxyUrl = "https://cors-anywhere.herokuapp.com/";
 
       const news = await axios.get(
-        `https://newsapi.org/v2/top-headlines?country=in&apiKey=2d8b39d3d0f64e1f90fc8b3176a9e040&pageSize=${loadMore}&category=${category}`
+        `https://${proxyUrl}newsapi.org/v2/top-headlines?country=in&apiKey=2d8b39d3d0f64e1f90fc8b3176a9e040&pageSize=${loadMore}&category=${category}`
       );
       console.log(news);
       setNewsArray(news.data.articles);
