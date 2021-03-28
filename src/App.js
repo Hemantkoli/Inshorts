@@ -8,21 +8,21 @@ import NewsContent from "./components/NewsContent/NewsContent";
 function App() {
   const [newsArray, setNewsArray] = useState([]);
   const [newsResults, setNewsResults] = useState();
-  const [loadMore, setLoadMore] = useState(20);
+  const [loadMore, setLoadMore] = useState(10);
   const [category, setCategory] = useState("general");
 
-  console.log(process.env);
+  //console.log(process.env);
 
   const newsApi = async () => {
     try {
-      const proxyUrl = "https://cors-anywhere.herokuapp.com/";
+      //const proxyUrl = "https://cors-anywhere.herokuapp.com/";
 
       const news = await axios.get(
-        `https://${proxyUrl}newsapi.org/v2/top-headlines?country=in&apiKey=2d8b39d3d0f64e1f90fc8b3176a9e040&pageSize=${loadMore}&category=${category}`
+        `https://gnews.io/api/v4/search?lang=en&country=in&q=${category}&token=5f1b2a6d747fb759bed29524148c49eb`
       );
-      console.log(news);
+      // console.log(news);
       setNewsArray(news.data.articles);
-      setNewsResults(news.data.totalResults);
+      setNewsResults(news.data.totalArticles);
     } catch (error) {
       console.log(error);
     }
