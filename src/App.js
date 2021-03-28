@@ -9,7 +9,7 @@ function App() {
   const [newsArray, setNewsArray] = useState([]);
   const [newsResults, setNewsResults] = useState();
   const [loadMore, setLoadMore] = useState(10);
-  const [category, setCategory] = useState("sports");
+  const [category, setCategory] = useState("general");
 
   //console.log(process.env);
 
