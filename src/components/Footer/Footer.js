@@ -18,7 +18,7 @@ const Footer = () => {
         <a href="https://www.linkedin.com/in/hemant-koli-8279a8156/" target="__blank">
           <i className="fab fa-linkedin fa-2x"></i>
         </a>
-        <a href="https://piyushjsx.netlify.app/" target="__blank">
+        <a href="https://github.com/Hemantkoli" target="__blank">
           <i className="fas fa-link fa-2x"></i>
         </a>
       </div>
