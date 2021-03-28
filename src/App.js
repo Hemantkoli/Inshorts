@@ -3,13 +3,13 @@ import { useEffect, useState } from "react";
 import "./App.css";
 import Footer from "./components/Footer/Footer";
 import NavInshort from "./components/NavInshort";
-import NewsContent from "./components/NewsContent/NewsContent";
+import NewsContent from "./components/NewsContent/NewsContent.js";
 
 function App() {
   const [newsArray, setNewsArray] = useState([]);
   const [newsResults, setNewsResults] = useState();
   const [loadMore, setLoadMore] = useState(10);
-  const [category, setCategory] = useState("general");
+  const [category, setCategory] = useState("sports");
 
   //console.log(process.env);
 
@@ -18,9 +18,9 @@ function App() {
       //const proxyUrl = "https://cors-anywhere.herokuapp.com/";
 
       const news = await axios.get(
-        `https://gnews.io/api/v4/search?lang=en&country=in&q=${category}&token=5f1b2a6d747fb759bed29524148c49eb`
+        `https://gnews.io/api/v4/search?lang=en&country=in&q=${category}&page=${loadMore}&token=1c30fd867daa9bdad2f55ee80fe2c61c`
       );
-      // console.log(news);
+      console.log(news.data.articles);
       setNewsArray(news.data.articles);
       setNewsResults(news.data.totalArticles);
     } catch (error) {
