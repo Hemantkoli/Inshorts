@@ -4,6 +4,7 @@ import NewsCard from "../NewsCard/NewsCard";
 import "./NewsContent.css";
 
 const NewsContent = ({ newsArray, loadMore, setLoadMore, newsResults }) => {
+  
   return (
     <Container maxWidth="md">
       <div className="content">
@@ -22,13 +23,12 @@ const NewsContent = ({ newsArray, loadMore, setLoadMore, newsResults }) => {
             src="https://assets.inshorts.com/website_assets/images/playstore.png"
           />
         </div>
-
-        {/* First this */}
+        { /*First this*/ }
         {newsArray.map((newsItem) => (
           <NewsCard newsItem={newsItem} key={newsItem.title} />
         ))}
 
-        {/* Then this */}
+        { /*Then this */}
         {loadMore <= newsResults && (
           <>
             <hr />
@@ -42,7 +42,7 @@ const NewsContent = ({ newsArray, loadMore, setLoadMore, newsResults }) => {
         )}
       </div>
     </Container>
-  );
+  )
 };
 
 export default NewsContent;
